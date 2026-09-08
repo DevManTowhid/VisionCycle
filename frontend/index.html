@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vision Cycle</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+        rel="stylesheet"
+    >
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Header -->
+    <h1 class="mt-4 mb-4 text-3xl text-center font-bold">
+        Welcome to Vision Cycle
+    </h1>
+
+
+    <!-- Main Two-Column Layout -->
+    <div class="flex h-screen px-6 pb-6 space-x-6">
+
+        <!-- ================= LEFT PANEL ================= -->
+        <div class="w-1/2 bg-white rounded-lg shadow-md p-6 flex flex-col">
+
+            <h2 class="text-2xl font-semibold text-center mb-6">
+                Image Input
+            </h2>
+
+
+            <!-- Upload Button -->
+            <div class="flex justify-center">
+
+                <label
+                    for="imageInput"
+                    class="text-center text-white bg-blue-500
+                           px-6 py-3 rounded-lg cursor-pointer
+                           hover:bg-blue-600"
+                >
+                    Upload your image!
+
+                    <input
+                        class="hidden"
+                        type="file"
+                        id="imageInput"
+                        accept="image/*"
+                    >
+                </label>
+
+            </div>
+
+
+            <!-- Image Preview -->
+            <div
+                id="imagePreviewContainer"
+                class="image-preview text-center mt-8"
+                hidden
+            >
+
+                <p class="font-semibold text-lg">
+                    Image Preview
+                </p>
+
+                <img
+                    id="imagePreview"
+                    src=""
+                    alt="Image Preview"
+                    class="mt-4 w-64 h-64 object-cover
+                           rounded-lg border border-gray-300
+                           block mx-auto"
+                >
+
+            </div>
+
+
+            <!-- Submit Button -->
+            <div class="mt-auto flex justify-center">
+
+                <button
+                    id="submitButton"
+                    class="bg-green-500 text-white
+                           px-8 py-3 rounded-lg
+                           hover:bg-green-600"
+                >
+                    Submit Image
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= RIGHT PANEL ================= -->
+        <div class="w-1/2 bg-white rounded-lg shadow-md p-6 flex flex-col">
+
+            <h2 class="text-2xl font-semibold text-center mb-4">
+                Generated Information
+            </h2>
+
+
+            <!-- Scrollable Content -->
+            <div
+                id="generatedContent"
+                class="flex-1 overflow-y-auto
+                       border border-gray-200
+                       rounded-lg p-4 bg-gray-50"
+            >
+
+                <!-- Generated Text -->
+                <section class="mb-6">
+
+                    <h3 class="text-lg font-semibold mb-2">
+                        Generated Text
+                    </h3>
+
+                    <p id="generatedText" class="text-gray-700">
+                        Generated textual description will appear here...
+                    </p>
+
+                </section>
+
+
+                <!-- Image QA -->
+                <section class="mb-6">
+
+                    <h3 class="text-lg font-semibold mb-2">
+                        Image QA
+                    </h3>
+
+                    <div id="qaContainer">
+                        <p class="text-gray-500">
+                            Generated questions and answers will appear here...
+                        </p>
+                    </div>
+
+                </section>
+
+
+                <!-- Extracted Features -->
+                <section class="mb-6">
+
+                    <h3 class="text-lg font-semibold mb-2">
+                        Extracted Features
+                    </h3>
+
+                    <div id="featuresContainer">
+                        <p class="text-gray-500">
+                            Feature information will appear here...
+                        </p>
+                    </div>
+
+                </section>
+
+
+                <!-- Embeddings -->
+                <section class="mb-6">
+
+                    <h3 class="text-lg font-semibold mb-2">
+                        Textual Embeddings
+                    </h3>
+
+                    <pre
+                        id="embeddingContainer"
+                        class="bg-gray-900 text-green-400
+                               p-4 rounded-lg text-sm
+                               overflow-x-auto"
+                    >[ embedding vector will appear here ]</pre>
+
+                </section>
+
+
+                <!-- Metrics -->
+                <!-- <section>
+
+                    <h3 class="text-lg font-semibold mb-2">
+                        Performance Metrics
+                    </h3>
+
+                    <div id="metricsContainer">
+
+                        <p>
+                            Cosine Similarity:
+                            <span id="cosineSimilarity">--</span>
+                        </p>
+
+                        <p>
+                            CLIP Score:
+                            <span id="clipScore">--</span>
+                        </p>
+
+                        <p>
+                            Semantic Similarity:
+                            <span id="semanticSimilarity">--</span>
+                        </p>
+
+                    </div>
+
+                </section> -->
+
+            </div>
+
+
+            <!-- Regenerate Button -->
+            <div class="mt-4 flex justify-center">
+
+                <button
+                    id="regenerateButton"
+                    class="bg-purple-500 text-white
+                           px-8 py-3 rounded-lg
+                           hover:bg-purple-600"
+                >
+                    Regenerate
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
